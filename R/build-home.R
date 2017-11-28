@@ -281,7 +281,7 @@ data_link_github <- function(pkg = ".") {
   if (!any(github))
     return(character())
 
-  link_url(paste0("Help develop", pkg$package), urls[which(github)[[1]]])
+  link_url(paste0("Help develop ", pkg$package), urls[which(github)[[1]]])
 }
 
 data_link_bug_report <- function(pkg = ".") {
