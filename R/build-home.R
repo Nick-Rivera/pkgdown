@@ -281,7 +281,7 @@ data_link_github <- function(pkg = ".") {
   if (!any(github))
     return(character())
 
-  link_url("Browse source code", urls[which(github)[[1]]])
+  link_url(paste0("Help develop", pkg$package), urls[which(github)[[1]]])
 }
 
 data_link_bug_report <- function(pkg = ".") {
@@ -354,6 +354,5 @@ repo_url <- function(pkg, cran = cran_mirror(), bioc = bioc_mirror()) {
 }
 
 link_url <- function(text, href) {
-  label <- gsub("(/+)", "\\1&#8203;", href)
-  paste0(text, " at <br /><a href='", href, "'>", label, "</a>")
+  paste0("<a href='", href, "'>", text, "</a>")
 }
