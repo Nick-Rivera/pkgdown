@@ -47,7 +47,7 @@ data_reference_index_section <- function(section, pkg, depth = 1L) {
   section_topics <- pkg$topics[in_section, ]
 
   contents <- tibble::tibble(
-    path = section_topics$file_out,
+    path = sapply(section_topics$file_out, tolower),
     aliases = purrr::map2(
       section_topics$funs,
       section_topics$name,
