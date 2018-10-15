@@ -1,5 +1,5 @@
 Package: pkgdown
-Version: 0.2.0.0000
+Version: 3.0.0
 Title: Make Static HTML Documentation for a Package
 Description: Generate a beautiful and useful website from a source package.
 Authors@R: c(
