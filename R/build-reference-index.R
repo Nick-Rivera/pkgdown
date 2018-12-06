@@ -59,7 +59,7 @@ data_reference_index_section <- function(section, pkg, depth = 1L) {
   list(
     title = section$title,
     slug = paste0("section-", make_slug(section$title)),
-    desc = markdown_text(section$desc, depth = 1L),
+    desc = markdown_text(section$desc, depth = 0L),
     class = section$class,
     contents = purrr::transpose(contents)
   )
