@@ -25,7 +25,7 @@ markdown_text <- function(text, ...) {
   markdown(tmp, ...)
 }
 
-markdown <- function(path = NULL, ..., depth = 0L) {
+markdown <- function(path = NULL, ..., depth = 0L, addLinks = TRUE) {
   tmp <- tempfile(fileext = ".html")
   on.exit(unlink(tmp), add = TRUE)
 
@@ -49,7 +49,11 @@ markdown <- function(path = NULL, ..., depth = 0L) {
   )
 
   xml <- xml2::read_html(tmp, encoding = "UTF-8")
-  tweak_code(xml, depth = depth)
+
+  if (addLinks) {
+    tweak_code(xml, depth = depth)
+  }
+
   tweak_anchors(xml, only_contents = FALSE)
 
   # Extract body of html - as.character renders as xml which adds
